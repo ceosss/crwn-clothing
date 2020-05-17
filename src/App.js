@@ -55,7 +55,7 @@ class App extends React.Component {
               )
             }
           />
-          <Route to="/checkout" component={Checkout} />
+          <Route exact to="/checkout" component={Checkout} />
         </Switch>
       </div>
     );

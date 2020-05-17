@@ -10,3 +10,17 @@ export const addItem = (payload) => {
     payload: payload,
   };
 };
+
+export const clearItem = (payload) => {
+  return {
+    type: CartActionTypes.CLEAR_ITEM_FROM_CART,
+    payload: payload,
+  };
+};
+
+export const removeItem = (payload) => {
+  return {
+    type: CartActionTypes.REMOVE_ITEM,
+    payload: payload,
+  };
+};

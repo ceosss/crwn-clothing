@@ -6,7 +6,8 @@ import CheckoutItem from "./../../components/checkout-item/checkout-item.compone
 import "./checkout.styles.scss";
 
 const Checkout = (props) => {
-  const { total, items } = props;
+  const { items, totalPrice } = props;
+
   return (
     <div className="checkout-page">
       <div className="checkout-header">
@@ -26,11 +27,12 @@ const Checkout = (props) => {
           <span>Remove</span>
         </div>
       </div>
+
       {items.map((item) => (
-        <CheckoutItem key={item.key} item={item} />
+        <CheckoutItem key={item.id} item={item} />
       ))}
       <div className="total">
-        <span>TOTAL: $ {total}</span>
+        <span>TOTAL: $ {totalPrice}</span>
       </div>
     </div>
   );
@@ -39,7 +41,11 @@ const Checkout = (props) => {
 const mapStateToProps = (state) => {
   return {
     items: state.cart.items,
-    total: state.cart.totalPrice,
+    totalPrice: state.cart.items.reduce(
+      (accumulatedQuantity, item) =>
+        accumulatedQuantity + item.quantity * item.price,
+      0
+    ),
   };
 };
 

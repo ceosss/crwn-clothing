@@ -13,7 +13,7 @@ const CartDropdown = (props) => {
   const { items, history, toggleCartHidden } = props;
 
   const handleClick = () => {
-    history.push("/checkput");
+    history.push("/checkout");
     toggleCartHidden();
   };
 
