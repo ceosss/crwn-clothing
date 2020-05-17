@@ -13,3 +13,12 @@ export const addItemToCart = (cartItems, cartItemToAdd) => {
 
   return [...cartItems, { ...cartItemToAdd, quantity: 1 }];
 };
+
+export const totalPriceCal = (cartItem, cartItemToAdd) => {
+  let price = 0;
+  for (let key in cartItem) {
+    price += cartItem[key].quantity * cartItem[key].price;
+  }
+  price += cartItemToAdd.price;
+  return price;
+};
