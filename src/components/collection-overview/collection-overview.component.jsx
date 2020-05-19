@@ -3,6 +3,7 @@ import React from "react";
 import { connect } from "react-redux";
 
 import CollectionPreview from "./../../components/collection-preview/Collection-preview.component";
+import { inArrayFormat } from "./../../redux/shop/shop.utils.js";
 
 import "./collection-overview.styles.scss";
 
@@ -18,7 +19,7 @@ const CollectionOverview = ({ collections }) => {
 
 const mapStateToProps = ({ shop: { collections } }) => {
   return {
-    collections,
+    collections: inArrayFormat(collections),
   };
 };
 

@@ -1,9 +1,15 @@
 import React from "react";
+
+import { Redirect } from "react-router-dom";
+
 import "./Menu-item.styles.scss";
 
-const MenuItem = ({ title, imageUrl, size }) => {
+const MenuItem = ({ title, imageUrl, size, linkUrl }) => {
   return (
-    <div className={`${size} menu-item`}>
+    <div
+      className={`${size} menu-item`}
+      onClick={() => <Redirect to={`/${linkUrl}`} />}
+    >
       <div
         className="background-image"
         style={{
