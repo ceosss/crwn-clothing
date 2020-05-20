@@ -12,7 +12,9 @@ const Collection = ({ collections }) => {
 
   return (
     <div className="collection-page">
-      <div className="title">{title}</div>
+      <div>
+        <h1 className="title">{title.toUpperCase()}</h1>
+      </div>
       <div className="items">
         {items.map((item) => (
           <CollectionItem key={item.id} item={item} />

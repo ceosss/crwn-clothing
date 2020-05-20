@@ -1,15 +1,16 @@
 import React from "react";
 
-import { Redirect } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 
 import "./Menu-item.styles.scss";
 
-const MenuItem = ({ title, imageUrl, size, linkUrl }) => {
+const MenuItem = ({ title, imageUrl, size, linkUrl, history }) => {
+  const handleClick = () => {
+    history.push(`/${linkUrl}`);
+  };
+
   return (
-    <div
-      className={`${size} menu-item`}
-      onClick={() => <Redirect to={`/${linkUrl}`} />}
-    >
+    <div className={`${size} menu-item`} onClick={handleClick}>
       <div
         className="background-image"
         style={{
@@ -24,4 +25,4 @@ const MenuItem = ({ title, imageUrl, size, linkUrl }) => {
   );
 };
 
-export default MenuItem;
+export default withRouter(MenuItem);
