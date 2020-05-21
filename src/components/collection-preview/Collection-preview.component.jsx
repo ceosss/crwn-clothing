@@ -3,7 +3,12 @@ import React from "react";
 import { withRouter } from "react-router-dom";
 import CollectionItem from "../Collection-item/Collection-item.component";
 
-import "./Collection-preview.styles.scss";
+// import "./Collection-preview.styles.scss";
+import {
+  CollectionPreviewContainer,
+  CollectionTitleContainer,
+  PreviewContainer,
+} from "./Collection-preview.styles";
 
 const PreviewCollection = ({ title, items, routeName, history }) => {
   const handleClick = () => {
@@ -11,18 +16,18 @@ const PreviewCollection = ({ title, items, routeName, history }) => {
   };
 
   return (
-    <div className="collection-preview">
-      <h1 className="title" onClick={handleClick}>
+    <CollectionPreviewContainer>
+      <CollectionTitleContainer onClick={handleClick}>
         {title.toUpperCase()}
-      </h1>
-      <div className="preview">
+      </CollectionTitleContainer>
+      <PreviewContainer>
         {items
           .filter((item, index) => index < 4)
           .map((item) => (
             <CollectionItem key={item.id} item={item} />
           ))}
-      </div>
-    </div>
+      </PreviewContainer>
+    </CollectionPreviewContainer>
   );
 };
 

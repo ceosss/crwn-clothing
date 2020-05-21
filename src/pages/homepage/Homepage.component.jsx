@@ -1,16 +1,15 @@
 import React from "react";
 
-// import { withRouter } from "react-router-dom";
-
 import Directory from "../../components/directory/Directory.component";
 
-import "./Homepage.styles.scss";
+import HomePageContainer from "./Homepage.styles";
+// import "./Homepage.styles.scss";
 
 const Homepage = (props) => {
   return (
-    <div className="homepage">
+    <HomePageContainer>
       <Directory />
-    </div>
+    </HomePageContainer>
   );
 };
 

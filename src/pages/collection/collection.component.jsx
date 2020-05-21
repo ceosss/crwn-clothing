@@ -5,22 +5,26 @@ import CollectionItem from "../../components/Collection-item/Collection-item.com
 import { getSpecificCat } from "./../../redux/shop/shop.utils.js";
 import { connect } from "react-redux";
 
-import "./collection.styles.scss";
+import {
+  CollectionPageContainer,
+  CollectionItemsContainer,
+  TitleContainer,
+} from "./collection.styles";
+// import "./collection.styles.scss";
 
 const Collection = ({ collections }) => {
   const { title, items } = collections;
 
   return (
-    <div className="collection-page">
-      <div>
-        <h1 className="title">{title.toUpperCase()}</h1>
-      </div>
-      <div className="items">
+    <CollectionPageContainer>
+      <TitleContainer>{title.toUpperCase()}</TitleContainer>
+
+      <CollectionItemsContainer>
         {items.map((item) => (
           <CollectionItem key={item.id} item={item} />
         ))}
-      </div>
-    </div>
+      </CollectionItemsContainer>
+    </CollectionPageContainer>
   );
 };
 

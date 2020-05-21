@@ -4,11 +4,12 @@ import MenuItem from "../menu-item/Menu-item.component";
 
 import { connect } from "react-redux";
 
-import "./Directory.styles.scss";
+// import "./Directory.styles.scss";
+import { DirectoryMenuContainer } from "./Directory.styles";
 
 const Directory = ({ sections }) => {
   return (
-    <div className="directory-menu">
+    <DirectoryMenuContainer>
       {sections.map(({ title, id, imageUrl, size, linkUrl }) => (
         <MenuItem
           key={id}
@@ -18,7 +19,7 @@ const Directory = ({ sections }) => {
           linkUrl={linkUrl}
         />
       ))}
-    </div>
+    </DirectoryMenuContainer>
   );
 };
 

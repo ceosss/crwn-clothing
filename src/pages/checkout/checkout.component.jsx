@@ -5,44 +5,52 @@ import { connect } from "react-redux";
 import CheckoutItem from "./../../components/checkout-item/checkout-item.component";
 import StripeCheckoutButton from "./../../components/stripe-button/stripe-button.component";
 
-import "./checkout.styles.scss";
+import {
+  CheckoutHeaderContainer,
+  CheckoutPageContainer,
+  HeaderBlockContainer,
+  TotalPriceContainer,
+  TestWariningContainer,
+} from "./checkout.styles";
+
+// import "./checkout.styles.scss";
 
 const Checkout = (props) => {
   const { items, totalPrice } = props;
 
   return (
-    <div className="checkout-page">
-      <div className="checkout-header">
-        <div className="header-block">
+    <CheckoutPageContainer>
+      <CheckoutHeaderContainer>
+        <HeaderBlockContainer>
           <span>Product</span>
-        </div>
-        <div className="header-block">
+        </HeaderBlockContainer>
+        <HeaderBlockContainer>
           <span>Description</span>
-        </div>
-        <div className="header-block">
+        </HeaderBlockContainer>
+        <HeaderBlockContainer>
           <span>Quantity</span>
-        </div>
-        <div className="header-block">
+        </HeaderBlockContainer>
+        <HeaderBlockContainer>
           <span>Price</span>
-        </div>
-        <div className="header-block">
+        </HeaderBlockContainer>
+        <HeaderBlockContainer>
           <span>Remove</span>
-        </div>
-      </div>
+        </HeaderBlockContainer>
+      </CheckoutHeaderContainer>
 
       {items.map((item) => (
         <CheckoutItem key={item.id} item={item} />
       ))}
-      <div className="total">
+      <TotalPriceContainer>
         <span>TOTAL: $ {totalPrice}</span>
-      </div>
-      <div className="test-warning">
+      </TotalPriceContainer>
+      <TestWariningContainer>
         *Please use the following test credit card fot payment*
-        <br/>
+        <br />
         4242 4242 4242 4242 - Exp: 01/28 - CVV: 123
-      </div>
+      </TestWariningContainer>
       <StripeCheckoutButton price={totalPrice} />
-    </div>
+    </CheckoutPageContainer>
   );
 };
 

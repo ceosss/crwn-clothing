@@ -5,15 +5,16 @@ import { connect } from "react-redux";
 import CollectionPreview from "./../../components/collection-preview/Collection-preview.component";
 import { inArrayFormat } from "./../../redux/shop/shop.utils.js";
 
-import "./collection-overview.styles.scss";
+// import "./collection-overview.styles.scss";
+import { CollectionOverviewContainer } from "./collection-overview.styles";
 
 const CollectionOverview = ({ collections }) => {
   return (
-    <div className="collection-overview">
+    <CollectionOverviewContainer>
       {collections.map(({ id, ...otherCollectionProps }) => (
         <CollectionPreview key={id} {...otherCollectionProps} />
       ))}
-    </div>
+    </CollectionOverviewContainer>
   );
 };
 
