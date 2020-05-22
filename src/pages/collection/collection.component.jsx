@@ -5,6 +5,7 @@ import CollectionItem from "../../components/Collection-item/Collection-item.com
 import { getSpecificCat } from "./../../redux/shop/shop.utils.js";
 import { connect } from "react-redux";
 
+
 import {
   CollectionPageContainer,
   CollectionItemsContainer,
@@ -12,8 +13,8 @@ import {
 } from "./collection.styles";
 // import "./collection.styles.scss";
 
-const Collection = ({ collections }) => {
-  const { title, items } = collections;
+const Collection = (props) => {
+  const { title, items } = props.collections;
 
   return (
     <CollectionPageContainer>
