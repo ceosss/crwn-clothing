@@ -6,10 +6,11 @@ export const SignInAndSignUpPageContainer = styled.div`
   justify-content: space-between;
   margin: 30px auto;
   @media screen and (max-width: 800px) {
-    width: unset;
+    width: 100%;
     flex-direction: column;
     & > div {
       margin: 20px 0;
+      width: 100%;
     }
   }
 `;
