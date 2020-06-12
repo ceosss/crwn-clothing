@@ -15,7 +15,7 @@ import {
   convertCollectionsSnapshopToMap,
 } from "./../../firebase/firebase.utils";
 
-// import "./ShopPage.styles.scss";
+import "./ShopPage.styles.scss";
 
 const CollectionOverviewWithSpinner = WithSpinner(CollectionOverview);
 const CollectionWithSpinner = WithSpinner(Collection);

@@ -18,8 +18,9 @@ export const CollectionItemsContainer = styled.div`
     margin-bottom: 30px;
   }
   @media screen and (max-width: 800px) {
+    margin: 0 auto;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-gap: 15px;
+    grid-gap: 30px;
   }
 `;
